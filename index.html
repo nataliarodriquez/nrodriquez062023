@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natalia Rodriquez - Portfolio</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="FavIcon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="FavIcon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="FavIcon/favicon-16x16.png">
+    <link rel="manifest" href="FavIcon/site.webmanifest">
+    <link rel="mask-icon" href="FavIcon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="FavIcon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#00aba9">
+    <meta name="msapplication-config" content="FavIcon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@700&display=swap" rel="stylesheet">
+
+
+    <style>
+        /* set page colors with variables */
+
+    :root
+    {
+    --color-primary:#000000;
+    --color-secondary:#65e3da;
+    } 
+
+    /* .header
+    {
+        background-color:var(--color-primary);
+    } */
+
+
+
+    /* reset browser */
+    *, *::before, *::after
+    {
+        box-sizing:border-box;
+        margin:0;
+        padding:0; 
+    }
+
+    /* fix browser bounce */
+
+    body
+    {
+        overflow-x:auto;
+        width:100%;
+        overscroll-behavior:none;
+    }
+
+    /* general css for mobile first */
+
+    body{
+        font-family:Arial, Helvetica, sans-serif;
+        line-height:1.5;
+        background-color:#F8FAFC;
+        color:#333;
+    }
+
+    a{
+        text-decoration:none;
+    }
+
+    p
+    {
+        margin:1rem 0;
+    }
+
+    h1, h2
+    {
+        text-align:center;
+    }
+
+    h1, h2, h3
+    {
+        line-height:1.2;
+    }
+
+    li
+    {
+        line-height:2;
+    }
+
+    .container
+    {
+        max-width:1200px;
+        margin:0 auto;
+        padding: 0 30px;
+        border: none;
+    }
+
+
+    /* Header */
+    .header{
+        background-color:var(--color-primary);
+        height:70px;
+    }
+
+    /* make header .container */
+    .header .container
+        {
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            height:100%;
+            padding:0 20px 0 20px;
+        }
+
+    header img{
+            height:100px;
+            margin-top:40px;
+        }
+        
+        .logos{
+            display:none;
+        }
+        
+
+        .logo{
+            width:300px;
+        }
+
+        .menu
+        {
+            display:flex;
+            width:200px;
+            list-style-type:none; 
+        }
+
+        .menu li {
+            padding: 0 10px 0 10px;
+        }
+
+        .menu li a{
+            color:white;
+        }
+
+        .menu li a:hover
+        {
+            color:var(--color-secondary);
+        }
+
+        /* Showcase */
+
+        .showcase
+        {
+            background-color:#031943;
+            padding:30px;
+            background-image:url(img/anxiousangbann.jpg);
+            background-repeat:no-repeat;
+            background-position:center;;
+            background-size:center;
+
+            
+            
+        }
+
+        #showcase-text
+        {
+            color:var(--color-primary);
+            text-align:center;
+            margin:50px auto;
+            max-width:500px;
+            font-family: 'Kalam', cursive;
+        }
+
+        .showcase h1
+        {
+            font-size:50px;
+            margin-bottom:20px;
+            color:rgb(0, 229, 255);
+            text-shadow:2px 2px 2px rgb(8, 81, 94);    
+        }
+
+        .showcase p
+        {
+            font-size:24px;
+            margin-bottom:20px; 
+        }
+        .showcase-img
+        {
+            text-align:center;
+        }
+        .showcase-img img
+        {
+            border-radius:10px;
+            margin:0 auto;
+
+        }
+
+        .showcase-demo
+        {
+            color:#fff;
+            text-align:center;
+        }
+
+        /* cards */
+
+        .features .container
+        {
+            background-color:none;
+            display:flex;
+            gap:1rem;
+            justify-content:space-between;
+            flex-direction:column;
+        }
+
+        .features
+        {
+            margin-top:2rem;
+        }
+
+        .card
+        {
+            background-color:#fff;
+            padding:20px;
+            box-shadow:0 0 10px silver;
+            margin-bottom:20px;
+            flex-basis:28%;
+        }
+
+        .card p
+        {
+            color:white;
+            background-color:rgba(95, 125, 200, 0.36);
+            text-shadow: 2px 2px 2px rgb(33, 33,33);
+        }
+
+        .card h3
+        {
+            color:white;
+            background-color:rgba(95, 124, 200, 0.36);
+            text-align:center;
+            text-shadow: 2px 2px 2px rgb(33, 33, 33);
+        }
+
+        .card:hover 
+        {
+            transform:scale(1.2,1.2);
+            transition-duration:1.5s;
+            border:1.5px solid rgb(0, 217, 255);
+        }
+
+        #foresteld
+        {
+            background-image:url(img/forestelderd.png);
+            background-position:48% ;
+        }
+
+        #vaulteld
+        {
+            background-image:url(img/VAULTELDER.png);
+            background-size:cover;
+            background-position:50% 20%;
+        }
+
+        #prar
+        {
+            background-image:url(img/prarie.png);
+            background-size:cover;
+            background-position:50%;
+        }
+
+        /* page content */
+
+        .page-content
+        {
+            margin:20px 0;
+        }
+
+        .page-content h2, 
+        .page-content h3
+        {
+            margin:20px 0;
+        }
+        .page-content h2
+        {
+            font-size:40px
+        }
+
+        .page-content h3
+        {
+            font-size:25px;
+        }
+
+        /* semesters */
+
+        .semesters
+        {
+            margin:20px 0;
+        }
+
+        .semesters h2, 
+        .semesters h3
+        {
+            margin:20px 0;
+        }
+        .semesters h2
+        {
+            font-size:40px
+        }
+
+        .semesters h3
+        {
+            font-size:25px;
+        }
+
+        /* footer section */
+
+        .footer
+        {
+            background-color:var(--color-primary);
+            color:#fff;
+            text-align:center;
+            padding:20px;
+            margin-top:60px;
+        }
+
+        .footer .container
+        {
+            display:flex;
+            justify-content:space-evenly;
+            align-items:center;
+        }
+
+        .footer a
+        {
+            color:silver
+        }
+
+        .footer a:hover
+        {
+            color:var(--color-secondary);
+        }
+
+        .footer h3
+        {
+            margin-bottom:20px;
+        }
+
+        .quote
+        {
+            text-align:left;
+        }
+
+        .footerlinks
+        {
+            display:none;
+        }
+
+        @media (min-width:700px)
+        {
+            .features .container
+            {
+                flex-direction:row;
+            }
+
+            h1, h2
+            {
+                text-align:left;
+            }
+
+            .footerlinks
+            {
+                display:block;
+            }
+
+        }
+
+        @media (min-width:960px)
+        {
+            .logos
+            {
+                display:block;
+                margin:auto;
+            }
+
+            .logos-small
+            {
+                display:none;
+                
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Begin Header -->
+    <header class="header">
+    <!-- add container for sizing** -->
+    <!-- add link to index -->
+    <div class="container">
+        <div class="logo">
+            <a href="index.html"><img src="img/logocolored.png" alt="logo"></a>
+        </div>
+        <!-- add links to paged** -->
+        <nav>
+            <ul class="menu">
+                <li><a href="">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Blog</a></li>
+            </ul>
+    </nav>
+    </div>
+
+    </header>
+    <!-- End Header -->
+
+    <!-- Begin Showcase -->
+    <section class="showcase">
+        <div id="showcase-text">
+            <h1>Natalia Rodriquez</h1>
+            <h2>Portfolio</h2>
+        </div>
+
+    <div class="showcase-img">
+        <img src="img/candlebig.png" alt="Framework Logos" class="logos">
+        <img src="img/candlesmall.png" alt="Framework Logos" class="logos-small">
+    </div>
+
+    <!-- Add Text -->
+    <p class="showcase-demo">
+        <small>Work Showcase</small>
+    </p>
+    </section>
+    <!-- End Showcase -->
+
+    <!-- Begin Features -->
+    <section class="features">
+    <div class="container">
+        <div id="foresteld" class="card">
+            <h3>Career</h3>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, sequi?
+            </p>
+        </div>
+    
+        <div id="vaulteld" class="card">
+            <h3>Design</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, modi?</p>
+        </div>
+    
+        <div id="prar" class="card">
+            <h3>Programming</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio, libero.</p>
+        </div>
+    </div>
+    <!-- End container here -->
+    </section>
+    <!-- End Features -->
+
+    <!-- start page-content -->
+    <section class="page-content">
+       <div class="container">
+            <h2>Introduction</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, in, doloribus quis voluptatibus hic enim sapiente odit neque, blanditiis dignissimos accusamus provident excepturi fugiat consequatur cum corrupti. Nulla, mollitia enim.
+            </p>
+    
+            <h3>Career</h3>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam officia doloremque debitis consequatur architecto commodi ut voluptatum totam suscipit ea perspiciatis illum, iusto, sed rem, dolore laudantium nemo ex aut?
+            </p>
+    
+            <h3>Design</h3>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis voluptate ab unde eius quo, excepturi dolorem minus corrupti blanditiis, quisquam consectetur tenetur inventore voluptatum ut officia commodi eum expedita aliquid?
+            </p>
+    
+            <h3>Programming</h3>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae neque est voluptatem veniam exercitationem maxime et culpa harum odio! Facilis ipsa nemo alias voluptas labore delectus quasi accusamus provident adipisci.
+            </p>
+       </div>
+    </section>
+    <!-- end page-content -->
+
+    <!-- begin semesters section -->
+    <section class="semesters">
+   <div class="container">
+        <h2>Key Assignments</h2>
+        <h3>Semester 1</h3>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, nihil rerum. Soluta eveniet veniam itaque mollitia facilis delectus, error consequuntur!
+        </p>
+        <h3>Semester 2</h3>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur unde nulla eum perferendis mollitia distinctio a provident numquam nihil ipsa.    
+        </p>
+
+        <img src="img/candlesmall.png" alt="" id="chibi">
+   </div>
+   
+
+
+
+
+    </section>
+    <!-- end semester section -->
+
+    <!-- begin footer section -->
+        <footer class="footer">
+            <div class="container">
+                <div class="quote">
+                    <h3>Final Thoughts</h3>
+                    <blockquote>
+                        Nothing in the world belongs to me
+                        But my love, mine, all mine
+                    </blockquote>
+                    <p>-Mitski</p>
+                </div>
+    
+                <div class="footerlinks">
+                    <h3>Links</h3>
+                    <ul>
+                        <a href="#"><li>Home</li></a>
+                        <a href="#"><li>About</li></a>
+                        <a href="#"><li>Blog</li></a>
+                    </ul>
+    
+                </div>
+            </div>
+
+        </footer>
+    <!-- end footer section -->
+
+</body>
+</html>
