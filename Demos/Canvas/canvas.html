@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><Canvas></Canvas></title>
+    
+    <style>
+
+        *
+        {
+            margin:0;
+            padding:0;
+        }
+        body
+        {
+            background-color:silver;
+        }
+
+        #canvas1
+        {
+            /* border:5px solid black; */
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- <h1>Canvas</h1> -->
+    
+    <canvas id="canvas1"></canvas>
+
+    <script>
+        // Create Canvas variable
+        const canvas = window.document.getElementById('canvas1');
+
+        // window.alert(canvas);
+
+        // Resize Canvas
+        canvas.width = innerWidth;
+        canvas.height = window.innerHeight;
+    </script>
+</body>
+</html>
