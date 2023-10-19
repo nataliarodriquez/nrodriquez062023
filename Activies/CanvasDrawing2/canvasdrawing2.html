@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canvas Drawing</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        margin-top: 50px;
+      }
+      h1 {
+        text-align: center;
+      }
+      #canvas {
+        margin: auto;
+        display: block;
+        border: 1px solid silver;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Canvas Drawing</h1>
+    <canvas id="canvas" width="1000px" height="500px"></canvas>
+
+    <script>
+      // Create variables
+        const canvas = window.document.querySelector('#canvas');
+        const ctx = canvas.getContext('2d');
+
+      // Background color
+      canvas.style.backgroundColor = '#81d4e4';
+
+      // Sand 
+      ctx.fillStyle = "#eab676";
+      ctx.fillRect(-10,400,1200,200);
+
+      // Ocean
+      ctx.fillStyle='blue';
+      ctx.fillRect(-10,250,1200,150);
+
+      // Sun 
+      ctx.beginPath();
+      ctx.fillStyle = 'yellow';
+      ctx.strokeStyle = 'yellow';
+      ctx.lineWidth = 15;
+      ctx.arc(550,100,20,0, Math.PI*2);
+      ctx.stroke();
+      ctx.fill();
+
+      // Cloud 1 
+      ctx.beginPath();
+      ctx.fillStyle = 'white';
+      ctx.strokeStyle = 'white';
+      ctx.lineWidth = 15;
+      ctx.arc(760,150,30,0, Math.PI*2);
+      ctx.stroke();
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.fillStyle = 'white';
+      ctx.strokeStyle = 'white';
+      ctx.lineWidth = 15;
+      ctx.arc(800,180,30,0, Math.PI*2);
+      ctx.stroke();
+      ctx.fill();
+      
+      ctx.beginPath();
+      ctx.fillStyle = 'white';
+      ctx.strokeStyle = 'white';
+      ctx.lineWidth = 15;
+      ctx.arc(720,180,30,0, Math.PI*2);
+      ctx.stroke();
+      ctx.fill();
+
+      ctx.fillStyle = "white";
+      ctx.fillRect(735,175,70,40);
+
+      // Cloud 2 
+      ctx.beginPath();
+      ctx.fillStyle = 'white';
+      ctx.strokeStyle = 'white';
+      ctx.lineWidth = 15;
+      ctx.arc(200,100,30,0, Math.PI*2);
+      ctx.stroke();
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.fillStyle = 'white';
+      ctx.strokeStyle = 'white';
+      ctx.lineWidth = 15;
+      ctx.arc(240,130,30,0, Math.PI*2);
+      ctx.stroke();
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.fillStyle='white';
+      ctx.strokeStyle= ' white';
+      ctx.lineWidth = 15;
+      ctx.arc(170,130,30,0, Math.PI*2);
+      ctx.stroke();
+      ctx.fill();
+
+      ctx.fillStyle ='white';
+      ctx.fillRect(190,120,70,40);
+      
+      </script>
+  </body>
+</html>

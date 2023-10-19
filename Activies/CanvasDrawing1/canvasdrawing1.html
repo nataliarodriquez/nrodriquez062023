@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=L, initial-scale=1.0" />
+    <title>Landscape</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        margin-top: 50px;
+      }
+      h1 {
+        text-align: center;
+      }
+      #canvas {
+        margin: auto;
+        display: block;
+        border: 1px solid silver;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Canvas Drawing</h1>
+    <canvas id="canvas" width="1000px" height="500px"></canvas>
+
+    <script>
+      // Create variables
+      const canvas = window.document.querySelector('#canvas');
+      const ctx = canvas.getContext('2d');
+
+      // Eye 1
+      ctx.beginPath();
+      ctx.fillStyle = 'black';
+      ctx.strokeStyle = '#000000';
+      ctx.lineWidth = 15;
+      ctx.arc(550, 100, 20, 0, Math.PI *2);
+      ctx.stroke();
+      ctx.fill();       
+
+      // Eye 2 
+      ctx.beginPath();
+      ctx.fillStyle = 'black';
+      ctx.strokeStyle = '#000000';
+      ctx.lineWidth = 15;
+      ctx.arc(450, 100, 20, 0, Math.PI *2);
+      ctx.stroke();
+      ctx.fill();
+
+      // Arc
+      ctx.beginPath();
+      ctx.arc(550, 200, 50, 0, Math.PI*1);
+      ctx.stroke();
+
+      // Arc 2 
+      ctx.beginPath();
+      ctx.arc(450, 200, 50, 0, Math.PI*1);
+      ctx.stroke();
+
+    </script>
+  </body>
+</html>
