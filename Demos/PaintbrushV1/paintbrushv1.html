@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paintbrush Version 1</title>
+
+    <style>
+
+        *
+        {
+            box-sizing:border-box;
+            margin:0;
+            padding:0;
+        }
+        
+        #canvas
+        {
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+        }
+
+        #menu
+        {
+            background-color:silver;
+            border:2px solid #333;
+            height:60px;
+            position:fixed;
+            width:100%;
+            padding:1rem;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="canvas">
+
+    </canvas>
+
+    <section id="menu">
+        <input type="color" id="colorpicker" value="#FF0000">
+        <input type="range" id="rangepicker" min="2" max="100" value="15">
+    </section>
+
+    <script>
+
+        // Create JavaScript variables 
+        let canvasColor = '#ffffff';
+        let brushColor = 'red';
+        let painting = false;
+        let brushSize = 15;
+
+        // Create canvas and assign variables
+        const canvas = window.document.querySelector('#canvas');
+        const ctx = canvas.getContext('2d');
+        // Colorpicker variable
+        const colorPicker = window.document.querySelector('#colorpicker');
+        const rangePicker = window.document.querySelector('#rangepicker');
+
+        // Set the canvas
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        // Set canvas color 
+        canvas.style.backgroundColor = canvasColor;
+
+        // Create mouse object 
+        const mouse ={
+            x: undefined,
+            y:undefined,
+        };
+
+        // Add event listener to color picker 
+        colorPicker.addEventListener('input', function(e){
+            brushColor = e.target.value;
+        });
+
+        rangePicker.addEventListener('input', function(e){
+            brushSize = e.target.value;
+        });
+
+        // Add several event listeners to the canvas 
+        canvas.addEventListener('mousedown', function(e){
+            painting = true;
+            draw();
+        });
+        
+        canvas.addEventListener('mousemove', function(e){
+            mouse.x = e.x;
+            mouse.y = e.y;
+            draw();
+        });
+
+        canvas.addEventListener('mouseup', function(e){
+            painting = false;
+        });
+
+        // Create named function to draw
+        function draw()
+        {
+            //console.log('now drawing');
+
+            if(painting == true)
+            {
+                ctx.beginPath();
+                ctx.fillStyle = brushColor;
+                ctx.arc(mouse.x, mouse.y, brushSize, 0, Math.PI *2);
+                ctx.fill();
+            }
+        }
+
+        window.addEventListener('resize', function(){
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight; 
+        });
+    </script>
+    
+</body>
+</html>
