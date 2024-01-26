@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paintbrush Version 1</title>
+    <title>Paintbrush Version 5</title>
 
     <style>
 
@@ -33,6 +33,13 @@
             padding:1rem;
             bottom: 0;
         }
+
+        body 
+        { 
+            cursor:url(images/eraser-icon-512x512-6m95qgcg.png);
+        }
+
+
     </style>
 </head>
 <body>
@@ -46,6 +53,7 @@
         <input type="color" id="colorpicker" value="#FF0000">
         <input type="range" id="rangepicker" min="2" max="100" value="15"> 
         <input type="image" src="Images/eraser-icon-512x512-6m95qgcg.png" alt="eraser" id="erasertoggle" width="30px" height="30px">
+        <button id="clearcanvas">Clear</button>
     </div>
     </section>
 
@@ -62,11 +70,13 @@
         const ctx = canvas.getContext('2d');
 
         // Change line cap 
-        ctx.lineCap= 'round';
+        
 
-        // Colorpicker variable
+        // Colorpicker variable˜
         const colorPicker = window.document.querySelector('#colorpicker');
         const rangePicker = window.document.querySelector('#rangepicker');
+        const eraserToggle = window.document.querySelector('#erasertoggle');
+        const clearCanvas = window.document.querySelector('#clearcanvas');
 
         // Set the canvas
         canvas.width = window.innerWidth;
@@ -90,8 +100,14 @@
             brushSize = e.target.value;
         });
 
-        
+        eraserToggle.addEventListener('click', function(e){
+            brushColor = canvasColor;
+        });
 
+        clearCanvas.addEventListener('click', function(e){
+            ctx.fillStyle = canvasColor;
+            ctx.fillRect (0, 0, 5000, 5000);
+        });
 
         // Add several event listeners to the canvas 
         canvas.addEventListener('mousedown', function(e){
@@ -123,6 +139,7 @@
                 ctx.strokeStyle = brushColor;
                 ctx.lineWidth = brushSize;
                 ctx.lineJoin = "round";
+                ctx.lineCap = 'round';
                 //ctx.arc(mouse.x, mouse.y, brushSize, 0, Math.PI *2);
                 ctx.lineTo(mouse.x, mouse.y);
                 ctx.stroke();

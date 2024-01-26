@@ -71,15 +71,6 @@
             draw();
         });
 
-        // Add an event listener to canvas
-        canvas.addEventListener('mousemove', function(e)
-        {
-            mouse.x = e.x;
-            mouse.y = e.y;
-
-            draw();
-        });
-
 
         // Handle resizing of browser window
         window.addEventListener('resize', function(){
@@ -91,10 +82,11 @@
         function draw()
         {   
             ctx.beginPath();
-            ctx.fillStyle = getComputedStyle(canvas).getPropertyValue('--favorite-color');
-            //ctx.strokelStyle = 'black';
-            //ctx.lineWidth = 2;
-            ctx.arc(mouse.x, mouse.y, 30, 0, Math.PI * 2);
+            ctx.lineJoin="round";
+            ctx.lineCap='round';
+            ctx.strokeStyle = 'black';
+            ctx.lineWidth = 2;
+            //ctx.arc(mouse.x, mouse.y, 30, 0, Math.PI * 2);
             ctx.fill();
             //ctx.stroke();
         }
